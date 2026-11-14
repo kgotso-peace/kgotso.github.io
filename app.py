@@ -8,7 +8,7 @@ def index():
 
 @app.route("/registrants")
 def registrants():
-  name = request.argv.get(name, "Whoever your name is")
-  surname = request.argv.get(surname, "Whoever your surname is")
+  name = request.args.get("name", "Whoever your name is")
+  surname = request.args.get("surname", "Whoever your surname is")
   
   return render_template("registrants.html", name=name, surname=surname)
